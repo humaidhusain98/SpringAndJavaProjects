@@ -1,0 +1,10 @@
+AWSs3Bucket
+AWSSNS
+BalanceApp
+Competitive e-pro
+DBPostgreSQL
+FinalJobDB
+HospitalManagementSystem
+Humaid-TestStarter
+Oauth2AngularRestApi
+OTPVerification

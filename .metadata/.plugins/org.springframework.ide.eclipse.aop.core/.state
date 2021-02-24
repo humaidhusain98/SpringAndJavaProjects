@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="springboot-stomp-websocket"/>
+<aop-project name="SpringBoot-AWS-Example"/>
+<aop-project name="JspWebApp-1"/>
+<aop-project name="spring-cloud-oauth2"/>
+<aop-project name="SMSVerification"/>
+<aop-project name="spring-basic-security"/>
+<aop-project name="SpringSecurity_FirstCOURSE"/>
+<aop-project name="Oauth2AngularRestApi"/>
+<aop-project name="SecureExample"/>
+<aop-project name="TokenAuthByMe"/>
+<aop-project name="UI"/>
+<aop-project name="Springboot-Dynamodb-example"/>
+<aop-project name="DataRestDemo"/>
+<aop-project name="E-Commerce"/>
+<aop-project name="OTPVerificationFirebase"/>
+<aop-project name="Angular8LoginNReg"/>
+<aop-project name="MyRegLogin"/>
+<aop-project name="crosscut-rxemed"/>
+<aop-project name="MyCustom"/>
+<aop-project name="AWSs3BucketuploadTest"/>
+<aop-project name="Springboot-Oauth2-google"/>
+<aop-project name="crosscut-rxemed-old"/>
+<aop-project name="SpringJDBC2PostgreSQL"/>
+<aop-project name="HelloWorld"/>
+<aop-project name="peopl"/>
+<aop-project name="ViewCounter"/>
+<aop-project name="Products"/>
+<aop-project name="e-com"/>
+<aop-project name="spring-facebook-example"/>
+<aop-project name="DBPostgreSQL"/>
+<aop-project name="spring-basic-security-JPA"/>
+<aop-project name="Spring-boot-websocket"/>
+<aop-project name="FinalJobDBTest"/>
+<aop-project name="AWSSNS"/>
+</aop-reference-model>

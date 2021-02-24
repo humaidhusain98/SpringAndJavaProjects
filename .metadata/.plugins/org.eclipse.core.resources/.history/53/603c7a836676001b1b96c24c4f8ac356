@@ -1,0 +1,120 @@
+package Ui;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class BookAppointmentUi extends JFrame implements ItemListener, ActionListener{
+	 
+	static JFrame f; 
+	  
+	    // label 
+	static JLabel l, l1; 
+	  
+	    // combobox 
+	static JComboBox c1; 
+	  
+	    // textfield to add and delete items 
+	static JTextField tf; 
+	
+	public BookAppointmentUi() {
+	
+		// create a new frame 
+  
+  
+  
+        // set layout of frame 
+        setLayout(new FlowLayout()); 
+  
+        // array of string contating cities 
+        String s1[] = { "Jalpaiguri", "Mumbai", "Noida", "Kolkata", "New Delhi" }; 
+  
+        // create checkbox 
+        c1 = new JComboBox(s1); 
+  
+        // create textfield 
+        tf = new JTextField(16); 
+  
+        // create add and remove buttons 
+        JButton b = new JButton("ADD"); 
+        JButton b1 = new JButton("REMOVE"); 
+  
+        // add action listener 
+        b.addActionListener(this); 
+        b1.addActionListener(this); 
+  
+        // add ItemListener 
+        c1.addItemListener(this); 
+  
+        // create labels 
+        l = new JLabel("select your city "); 
+        l1 = new JLabel("Jalpaiguri selected"); 
+  
+        // set color of text 
+        l.setForeground(Color.red); 
+        l1.setForeground(Color.blue); 
+  
+        // create a new panel 
+        JPanel p = new JPanel(); 
+  
+        p.add(l); 
+  
+        // add combobox to panel 
+        p.add(c1); 
+  
+        p.add(l1); 
+        p.add(tf); 
+        p.add(b); 
+        p.add(b1); 
+  
+        setLayout(new FlowLayout()); 
+  
+        // add panel to frame 
+        add(p); 
+  
+        // set the size of frame 
+        setSize(700, 200); 
+  
+        setVisible(true);
+		
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	public static void main(String args[]) 
+	{
+		new BookAppointmentUi();
+	}
+	
+	
+	
+
+}

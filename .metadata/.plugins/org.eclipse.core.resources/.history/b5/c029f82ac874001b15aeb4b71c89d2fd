@@ -1,0 +1,91 @@
+package Ui;
+
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+
+import controller.DiseaseController;
+import entity.Disease;
+
+public class DiseaseManagerUi {
+	
+	public DiseaseManagerUi()
+	{
+		DiseaseController.loadDisease();
+		JFrame f=new JFrame();
+		f.setTitle("Disease Manager Ui Diptanil Sengupta 113");
+		JLabel[] label=new JLabel[15];
+		JPanel panel=new JPanel();
+		int i;
+		for( i=0;i<DiseaseController.getSize();i++)
+		{
+		label[i]=new JLabel(DiseaseController.getDisease(i).toString());
+		panel.add(label[i]);
+		}
+		for(;i<15;i++)
+		{
+			label[i]=new JLabel();
+			panel.add(label[i]);
+			
+		}
+		
+		
+		JButton addButton=new JButton("Add Disease");
+		addButton.setBounds(130,300,150,80 );
+		f.add(addButton);
+				
+				
+		addButton.addActionListener(new ActionListener(){  
+		    public void actionPerformed(ActionEvent e){  
+		    	
+		    }
+		    });
+		
+		
+		JButton removeButton=new JButton("Remove Disease");
+		removeButton.setBounds(500,300,150,80 );
+		f.add(removeButton);
+				
+				
+		removeButton.addActionListener(new ActionListener(){  
+		    public void actionPerformed(ActionEvent e){  
+
+		        String id=JOptionPane.showInputDialog(f,"Enter Disease Id");
+		        int i=Integer.parseInt(id);  
+		        label[i-1].setText("");
+		        DiseaseController.removeDisease(i);
+		        
+		    
+		    }
+		    });
+		
+		
+		
+		
+		
+		
+		
+		
+		f.add(panel);
+		
+		
+		f.setSize(900,600);//400 width and 500 height  /using no layout managers  
+		f.setVisible(true);
+		
+	}
+	
+	
+	
+	
+	
+}

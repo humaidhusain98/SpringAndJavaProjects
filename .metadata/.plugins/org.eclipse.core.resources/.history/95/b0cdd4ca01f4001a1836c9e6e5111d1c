@@ -1,0 +1,80 @@
+package com.products.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+import com.products.exceptions.ResourceNotFoundException;
+import com.products.model.product;
+import com.products.services.productService;
+
+@RestController
+public class productController {
+	@Autowired
+	private productService service;
+	
+	
+	@GetMapping("/products")
+	public ResponseEntity<List<product>> getAllProducts() throws com.products.exceptions.ResourceNotFoundException {
+		System.out.println("All Products Displayed --Controller CLass");
+		return ResponseEntity.ok().body(service.fetchAllProducts());
+	}
+	
+	@GetMapping("/products/$id")
+	public ResponseEntity<product> getProductsById(@PathVariable Long id) throws com.products.exceptions.ResourceNotFoundException {
+		System.out.println("Products Displayed By Id --Controller CLass");
+		return ResponseEntity.ok().body(service.fetchProductById(id));
+	}
+	
+	@GetMapping("/products/search/{searchkey}")
+	public ResponseEntity<List<product>> search(@PathVariable String searchkey) throws ResourceNotFoundException {
+		System.out.println("SEARCH FUNCTIONALITY BEING IMPLEMENTED --Controller CLass");
+		return ResponseEntity.ok().body(service.fetchAllProducts((searchkey)));
+	}
+	
+	@GetMapping("/products/search/")
+	public ResponseEntity<List<product>> getAllMedicalCenters1() throws ResourceNotFoundException {
+		System.out.println("All MedicalCenters Displayed --Controller CLass");
+		return ResponseEntity.ok().body(service.fetchAllProducts());
+	}
+	
+	
+	@PostMapping("/products")
+	public String registerProduct(@RequestBody product produc){
+		
+		System.out.println("Product object saved at repository--Controller CLass");
+		service.save(produc);
+		return "Product Object Successfully Saved";
+	}
+	
+	@PutMapping("/products")
+	public String editProduct(@RequestBody product produc){
+		service.edit(produc);
+		return "Product Center Object Updated Successfully Saved";
+	}
+	
+	@DeleteMapping("/products")
+	public String deleteProduct(@RequestBody product produc) {
+		service.delete(produc.getId());
+		return "Product Object deleted";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}
