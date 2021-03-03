@@ -159,6 +159,18 @@ public class DoctorController
 		}
 		return doctornameslist;
 	}
+
+
+	public int getDoctorIdByName(String name){
+		int objId=-1;
+		for(int i=0;i<docs.size();i++)
+		{
+			if(docs.get(i).getName().equals(name)){
+				objId=docs.get(i).getId();
+			}
+		}
+		return objId;
+	}
 	
 	
 	

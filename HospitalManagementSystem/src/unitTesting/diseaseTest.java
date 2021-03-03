@@ -2,30 +2,35 @@ package unitTesting;
 
 import java.util.List;
 
-import org.junit.Test;
 
-import static org.junit.Assert.*;
 
 import controller.DiseaseController;
 import dbHandler.DiseaseDbHandler;
 import entity.Disease;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class diseaseTest {
 
-//	@Test
-//	public void  searchTest() 
-//	{
-//		List<Disease> diseaseList = DiseaseDbHandler.readDiseaseFromFile();
-//		for(int i=0;i<diseaseList.size();i++) 
-//		{
-//			Disease objDisease=null;
-//			objDisease = DiseaseController.searchDiseaseName(diseaseList.get(i).getName());
-//			assertEquals(objDisease,diseaseList.get(i));
-//		}
-//	}
-//	
-//	
-	
-	
-	
+	@Test
+	public void  controllerTest()
+	{
+	    //reading from file
+	    DiseaseDbHandler dbHandler=new DiseaseDbHandler();
+	    List<Disease> diseaseListFromFile=dbHandler.readDiseaseFromFile();
+
+	    //reading from controller
+        DiseaseController controller=new DiseaseController();
+        List<Disease> diseaseListFromController =  controller.getAllDiseases();
+
+		//Checking if they have same data
+        assertEquals(diseaseListFromController.toString(),diseaseListFromFile.toString());
+
+	}
+
+
+
+
+
 }

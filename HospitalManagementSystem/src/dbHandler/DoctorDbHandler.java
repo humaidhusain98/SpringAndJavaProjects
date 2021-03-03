@@ -13,7 +13,7 @@ import entity.Doctor;
 public class DoctorDbHandler {
 
 	public List<Doctor> readDoctorFromFile() {
-		String filePath="/home/hacker/eclipse-workspace/HospitalManagementSystem/src/db/doctor.csv";
+		String filePath="/home/humaid/Desktop/github-repositories/SpringAndJavaProjects/HospitalManagementSystem/src/db/doctor.csv";
 		String line="";
 		try 
 		{
@@ -44,7 +44,7 @@ public class DoctorDbHandler {
 	{
 		try 
 		{
-			String filePath="/home/hacker/eclipse-workspace/HospitalManagementSystem/src/db/doctor.csv";
+			String filePath="/home/humaid/Desktop/github-repositories/SpringAndJavaProjects/HospitalManagementSystem/src/db/doctor.csv";
 			FileWriter fw=new FileWriter(filePath,true);
 			BufferedWriter bWriter= new BufferedWriter(fw);
 			PrintWriter pw = new PrintWriter(bWriter);
@@ -70,7 +70,7 @@ public class DoctorDbHandler {
 		boolean resp=false;
 		try 
 		{
-			String filePath="/home/hacker/eclipse-workspace/HospitalManagementSystem/src/db/doctor.csv";
+			String filePath="/home/humaid/Desktop/github-repositories/SpringAndJavaProjects/HospitalManagementSystem/src/db/doctor.csv";
 			FileWriter fw=new FileWriter(filePath);
 			BufferedWriter bWriter= new BufferedWriter(fw);
 			PrintWriter pw = new PrintWriter(bWriter);

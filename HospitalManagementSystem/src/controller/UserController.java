@@ -32,6 +32,11 @@ public class UserController {
 		}
 		
 	}
+
+	public List<User> getAllUsers()
+	{
+		return userList;
+	}
 	
 	public boolean registerUser(User user) {
 		boolean status=false;

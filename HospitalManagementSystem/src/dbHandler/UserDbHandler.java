@@ -15,7 +15,7 @@ public class UserDbHandler {
 	public boolean addUserToDB(User user) 
 	{
 		boolean status=false;
-		String filePath="/home/hacker/eclipse-workspace/HospitalManagementSystem/src/db/user.csv";
+		String filePath="/home/humaid/Desktop/github-repositories/SpringAndJavaProjects/HospitalManagementSystem/src/db/user.csv";
 		try 
 		{
 			FileWriter fw=new FileWriter(filePath,true);
@@ -40,7 +40,7 @@ public class UserDbHandler {
 	public List<User> getAllUsersFromFile()
 	{
 		List<User> userlist=new ArrayList<User>();
-		String filePath="/home/hacker/eclipse-workspace/HospitalManagementSystem/src/db/user.csv";
+		String filePath="/home/humaid/Desktop/github-repositories/SpringAndJavaProjects/HospitalManagementSystem/src/db/user.csv";
 		String line="";
 		try 
 		{
@@ -72,7 +72,7 @@ public class UserDbHandler {
 		boolean resp=false;
 		try 
 		{
-			String filePath="/home/hacker/eclipse-workspace/HospitalManagementSystem/src/db/user.csv";
+			String filePath="/home/humaid/Desktop/github-repositories/SpringAndJavaProjects/HospitalManagementSystem/src/db/user.csv";
 			FileWriter fw=new FileWriter(filePath);
 			BufferedWriter bWriter= new BufferedWriter(fw);
 			PrintWriter pw = new PrintWriter(bWriter);
