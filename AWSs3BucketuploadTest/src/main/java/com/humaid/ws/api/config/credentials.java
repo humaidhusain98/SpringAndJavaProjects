@@ -20,8 +20,8 @@ public class credentials
 {
 	
 //--------------------------------------------------------------------------------------------------
-	 static BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIA2V3UKB5LLAYJ2TME",
-	            "mp5vyV1OyEFFRsZ0KJAvJL+txx6XQzDaFZlDVStu");
+	 static BasicAWSCredentials awsCreds = new BasicAWSCredentials("",
+	            "");
 	
 	 static AmazonS3 s3client = AmazonS3ClientBuilder.standard()
 	            .withCredentials(new AWSStaticCredentialsProvider(awsCreds)).withRegion(Regions.AP_SOUTH_1).build();
@@ -85,6 +85,5 @@ public class credentials
 
 	
 	
-	//AKIA2V3UKB5LLAYJ2TME
-	//mp5vyV1OyEFFRsZ0KJAvJL+txx6XQzDaFZlDVStu
+	
 }
