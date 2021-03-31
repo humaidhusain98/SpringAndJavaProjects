@@ -12,22 +12,17 @@ import org.apache.commons.dbcp.BasicDataSource;
 
 public class DatabaseHandler {
 
-//    private static DatabaseHandler databaseHandler = new DatabaseHandler();
-//    private static String userName = "peopl987321";
-//    private static String password = "C3UvtK6waJdO0oRcREF6";
-//    private static String port = "5432";
-//  private static String hostname = "peopl.cqqe9bwbt7wx.ap-south-1.rds.amazonaws.com:5432/";
-//	private static String dbName = "peopl";
+
 	
 //-------------------------------------------------------------------------------------Humaid Credentials
 	
 	//testing my localhost credentials
 	private static DatabaseHandler databaseHandler = new DatabaseHandler();
-	private static String userName = "postgres";
-	private static String password = "root";
+	private static String userName = "";
+	private static String password = "";
 	private static String port = "5432";
 	private static String hostname = "localhost:5432/";
-	private static String dbName = "FinalJobDBTest";
+	private static String dbName = "";
 //	
 //	
 //-------------------------------------------------------------------------------------Humaid Credentials	
