@@ -25,10 +25,7 @@ public class AwsSNSClient {
 
     
 	
-//	public void loadCredentials() {
-//		System.setProperty(AWS_ACCESS_KEY_ID,"AKIAJDWKWJDTPSD4XYQQ");
-//		System.setProperty(AWS_SECRET_KEY, "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");			
-//	}
+
 //	
 	@PostMapping
 	public ResponseEntity<Boolean> sendOTPSMS(@RequestBody String phoneNumber)
@@ -39,8 +36,8 @@ public class AwsSNSClient {
 		
 		try 
 		{
-		System.setProperty(AWS_ACCESS_KEY_ID,"AKIAJDWKWJDTPSD4XYQQ");
-		System.setProperty(AWS_SECRET_KEY, "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");	
+		System.setProperty(AWS_ACCESS_KEY_ID,"");
+		System.setProperty(AWS_SECRET_KEY, "");	
 		
 		}
 		catch(Exception e) 
