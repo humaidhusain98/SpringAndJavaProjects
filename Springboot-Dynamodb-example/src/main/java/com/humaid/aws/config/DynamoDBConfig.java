@@ -22,6 +22,6 @@ public class DynamoDBConfig {
 		
 		return AmazonDynamoDBClientBuilder.standard()
 				.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("dynamodb.us-east-2.amazonaws.com", "us-east-2"))
-				.withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials("AKIA2V3UKB5LP2XISPN7", "waX0z1/noz0ugcjOA5D+K8KMAkG5twLwTwwZjhjL"))).build();
+				.withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials("", ""))).build();
 	}
 }
