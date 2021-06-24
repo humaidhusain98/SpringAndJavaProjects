@@ -1,10 +1,8 @@
 package com.humaid.aws.sns.controller;
 
+import com.humaid.aws.sns.model.password;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.humaid.aws.sns.dbHandler.balAndCounterDbHandler;
 import com.humaid.aws.sns.model.balance;
@@ -45,7 +43,22 @@ public class balAndCountController {
 	public ResponseEntity<Boolean> Test(){
 		return ResponseEntity.ok().body(true);
 	}
-	
+
+
+	@GetMapping("/password1234567890")
+	public ResponseEntity<password> getPass(){
+		return ResponseEntity.ok().body(balAndCounterDbHandler.readPasswordFromFile());
+	}
+
+	@PostMapping("/password1234567890")
+	public ResponseEntity<Boolean> addPassword(@RequestParam String pass)
+	{
+		System.out.println(pass);
+		password password=new password(pass);
+		boolean Resp=balAndCounterDbHandler.reWritePassFile(password);
+		return ResponseEntity.ok().body(Resp);
+	}
+
 	
 	
 }

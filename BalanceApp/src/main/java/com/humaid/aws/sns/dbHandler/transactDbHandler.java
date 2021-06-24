@@ -81,7 +81,7 @@ public class transactDbHandler {
 			PrintWriter pw = new PrintWriter(bWriter);
 			for(int i=0;i<transactList.size();i++) 
 			{
-				pw.println(transactList.get(i).getId()+","+transactList.get(i).getAmt()+","+transactList.get(i).getDate()+","+transactList.get(i).getDescription());
+				pw.println(transactList.get(i).getId()+","+transactList.get(i).getAmt()+","+transactList.get(i).getDate()+","+transactList.get(i).getDescription()+","+transactList.get(i).isPutin());
 			}
 			pw.flush();
 			pw.close();

@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 
 import com.humaid.aws.sns.model.balance;
 import com.humaid.aws.sns.model.counter;
+import com.humaid.aws.sns.model.password;
 
 public class balAndCounterDbHandler {
 
@@ -107,10 +108,54 @@ public class balAndCounterDbHandler {
 		}
 	
 		return resp;
-	} 
-	
+	}
 
-	
-	
-	
+	public static password readPasswordFromFile() {
+		String path =  System.getProperty("user.home");
+		String fileName="password.csv";
+		String filePath=path+"/"+fileName;
+		String line="";
+		password pass =null;
+		try
+		{
+
+			BufferedReader br=new BufferedReader(new FileReader(filePath));
+			if((line=br.readLine())!=null)
+			{
+				pass=new password(line);
+			}
+			br.close();
+			return pass;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+	}//ReadCounterFromFile
+
+	public static boolean reWritePassFile(password pass )
+	{
+		boolean resp=false;
+		try
+		{
+			String path =  System.getProperty("user.home");
+			String fileName="password.csv";
+			String filePath=path+"/"+fileName;
+			FileWriter fw=new FileWriter(filePath);
+			BufferedWriter bWriter= new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bWriter);
+			pw.println(pass.getPass());
+			pw.flush();
+			pw.close();
+			resp=true;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		return resp;
+	}
+
 }
